@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Changelog Generator - Pull Request Helper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Changelog Generator</h2>
+    <form id="changelogForm">
+        <h5>Ticket information</h5>
+        <div class="input-row">
+            <div class="input-wrapper">
+                <input type="text" id="version" placeholder="1.29.0" required>
+                <label for="version" class="placeholder">Version</label>
+            </div>
+            <div class="input-wrapper">
+                <select id="ticketType" required>
+                    <option value="Story">Story</option>
+                    <option value="Bug">Bug</option>
+                    <option value="HotFix">HotFix</option>
+                    <option value="TechTask">TechTask</option>
+                    <option value="Refactor">Refactor</option>
+                    <option value="Documentation">Documentation</option>
+                    <option value="MergeBack">MergeBack</option>
+                </select>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="ticketNumber" placeholder="CA-XXXXXX" required>
+                <label for="ticketNumber" class="placeholder"">Number</label>
+            </div>
+        </div>
+        <div class=" input-row">
+                    <div class=" input-wrapper">
+                        <input type="text" id="ticketTitle" required>
+                        <label for="ticketTitle" class="placeholder">Title</label>
+                    </div>
+            </div>
+            <div class="input-row">
+                <div class="input-wrapper">
+                    <input type="text" id="ticketLink" placeholder="https:// ..." required>
+                    <label for="ticketLink" class="placeholder">Link</label>
+                </div>
+            </div>
+            <h5>Parent ticket information</h5>
+            <div class="input-row">
+                <div class="input-wrapper">
+                    <input type="text" id="parentLink" placeholder="https:// ..." required>
+                    <label for="parentLink" class="placeholder">Link</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="parentNumber" placeholder="CA-XXXX" required>
+                    <label for="parentNumber" class="placeholder">Number</label>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-wrapper">
+                    <input type="text" id="parentTitle" placeholder="Title" required>
+                    <label for="parentTitle" class="placeholder">Title</label>
+                </div>
+            </div>
+            <h5>Description</h5>
+            <div class="input-row">
+                <div class="input-wrapper">
+                    <textarea id="description" rows="5" cols="40"
+                        placeholder="Description of solution approach, or if is defect current state of code behavior and how we are fixing it"
+                        required></textarea>
+                </div>
+            </div>
+            <button type="submit">Generate Changelog</button>
+            <button type="reset" id="resetBtn">Reset Form</button>
+    </form>
+    <div id="changelogOutput" style="display:none;">
+        <h3>Changelog:</h3>
+        <button id="copyBtn">Copy</button><br>
+        
+        <div class="input-row">
+            <div class="input-wrapper">
+                <textarea id="output" rows="5" cols="40" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
