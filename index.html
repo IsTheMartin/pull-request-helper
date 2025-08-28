@@ -19,7 +19,7 @@
             <div class="input-wrapper">
                 <select id="ticketType" required>
                     <option value="Story">Story</option>
-                    <option value="Bug">Bug</option>
+                    <option value="BugFix">BugFix</option>
                     <option value="HotFix">HotFix</option>
                     <option value="TechTask">TechTask</option>
                     <option value="Refactor">Refactor</option>
@@ -74,8 +74,13 @@
     </form>
     <div id="changelogOutput" style="display:none;">
         <h3>Changelog:</h3>
-        <button id="copyBtn">Copy</button><br>
-        
+        <button id="copyTitle">Copy title</button><br>
+        <div class="input-row">
+            <div class="input-wrapper">
+                <textarea id="prTitle" rows="1" cols="40" readonly></textarea>
+            </div>
+        </div>
+        <button id="copyChangelog">Copy changelog</button><br>
         <div class="input-row">
             <div class="input-wrapper">
                 <textarea id="output" rows="5" cols="40" readonly></textarea>
