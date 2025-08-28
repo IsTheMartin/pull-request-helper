@@ -11,6 +11,21 @@
     <h2>Changelog Generator</h2>
     <form id="changelogForm">
         <h5>Ticket information</h5>
+
+        <div class="input-row">
+            <div class="input-wrapper">
+                <input type="text" id="ticketLink" placeholder="https:// ..." required>
+                <label for="ticketLink" class="placeholder">Link</label>
+            </div>
+        </div>
+
+        <div class=" input-row">
+            <div class=" input-wrapper">
+                <input type="text" id="ticketTitle" required>
+                <label for="ticketTitle" class="placeholder">Title</label>
+            </div>
+        </div>
+
         <div class="input-row">
             <div class="input-wrapper">
                 <input type="text" id="version" placeholder="1.29.0" required>
@@ -32,52 +47,42 @@
                 <label for="ticketNumber" class="placeholder"">Number</label>
             </div>
         </div>
-        <div class=" input-row">
-                    <div class=" input-wrapper">
-                        <input type="text" id="ticketTitle" required>
-                        <label for="ticketTitle" class="placeholder">Title</label>
-                    </div>
+            
+        <h5>Parent ticket information</h5>
+
+        <div class="input-row">
+            <div class="input-wrapper">
+                <input type="text" id="parentLink" placeholder="https:// ..." required>
+                <label for="parentLink" class="placeholder">Link</label>
             </div>
-            <div class="input-row">
-                <div class="input-wrapper">
-                    <input type="text" id="ticketLink" placeholder="https:// ..." required>
-                    <label for="ticketLink" class="placeholder">Link</label>
-                </div>
+            <div class="input-wrapper">
+                <input type="text" id="parentNumber" placeholder="CA-XXXX" required>
+                <label for="parentNumber" class="placeholder">Number</label>
             </div>
-            <h5>Parent ticket information</h5>
-            <div class="input-row">
-                <div class="input-wrapper">
-                    <input type="text" id="parentLink" placeholder="https:// ..." required>
-                    <label for="parentLink" class="placeholder">Link</label>
-                </div>
-                <div class="input-wrapper">
-                    <input type="text" id="parentNumber" placeholder="CA-XXXX" required>
-                    <label for="parentNumber" class="placeholder">Number</label>
-                </div>
+        </div>
+        <div class="input-row">
+            <div class="input-wrapper">
+                <input type="text" id="parentTitle" placeholder="Title" required>
+                <label for="parentTitle" class="placeholder">Title</label>
             </div>
-            <div class="input-row">
-                <div class="input-wrapper">
-                    <input type="text" id="parentTitle" placeholder="Title" required>
-                    <label for="parentTitle" class="placeholder">Title</label>
-                </div>
+        </div>
+        <h5>Description</h5>
+        <div class="input-row">
+            <div class="input-wrapper">
+                <textarea id="description" rows="5" cols="40"
+                    placeholder="Description of solution approach, or if is defect current state of code behavior and how we are fixing it"
+                    required></textarea>
             </div>
-            <h5>Description</h5>
-            <div class="input-row">
-                <div class="input-wrapper">
-                    <textarea id="description" rows="5" cols="40"
-                        placeholder="Description of solution approach, or if is defect current state of code behavior and how we are fixing it"
-                        required></textarea>
-                </div>
-            </div>
-            <button type="submit">Generate Changelog</button>
-            <button type="reset" id="resetBtn">Reset Form</button>
+        </div>
+        <button type="submit">Generate Changelog</button>
+        <button type="reset" id="resetBtn">Reset Form</button>
     </form>
     <div id="changelogOutput" style="display:none;">
         <h3>Changelog:</h3>
         <button id="copyTitle">Copy title</button><br>
         <div class="input-row">
             <div class="input-wrapper">
-                <textarea id="prTitle" rows="1" cols="40" readonly></textarea>
+                <textarea id="prTitle" rows="2" cols="40" readonly></textarea>
             </div>
         </div>
         <button id="copyChangelog">Copy changelog</button><br>
